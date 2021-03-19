@@ -1,11 +1,11 @@
-import { ISpecifationsRepository } from '../repositories/ISpecifationsRepository';
+import { ISpecifationsRepository } from '../../repositories/ISpecifationsRepository';
 
 interface IRequest {
   name: string;
   description: string;
 }
 
-class CreateSpecification {
+class CreateSpecificationUseCase {
   name: string;
   description: string;
 
@@ -23,4 +23,4 @@ class CreateSpecification {
   }
 }
 
-export { CreateSpecification };
+export { CreateSpecificationUseCase };

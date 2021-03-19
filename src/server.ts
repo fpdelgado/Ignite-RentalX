@@ -11,5 +11,5 @@ app.use('/categories', categoriesRoutes);
 app.use('/specifications', specificationsRoutes);
 
 app.listen(3333, () => {
-  console.log('Server is running!');
+  console.log('Server is running on: http://localhost:3333/');
 });
