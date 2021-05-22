@@ -34,37 +34,37 @@ describe('Create category controller', () => {
       password: 'admin',
     });
 
-    const { token } = responseToken.body;
+    const { refresh_token } = responseToken.body;
 
     const response = await request(app)
       .post('/categories')
       .send({
-        name: 'Category Supertest',
-        description: 'Category Supertest',
+        name: 'Create Category Supertest',
+        description: 'Create Category Supertest',
       })
       .set({
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${refresh_token}`,
       });
 
     expect(response.status).toBe(201);
   });
 
-  it('Should not be able to create a category with name exists', async () => {
+  it('Should not be able to create a category with name already existent', async () => {
     const responseToken = await request(app).post('/sessions').send({
       email: 'admin@rentx.com.br',
       password: 'admin',
     });
 
-    const { token } = responseToken.body;
+    const { refresh_token } = responseToken.body;
 
     const response = await request(app)
       .post('/categories')
       .send({
-        name: 'Category Supertest',
-        description: 'Category Supertest',
+        name: 'Create Category Supertest',
+        description: 'Create Category Supertest',
       })
       .set({
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${refresh_token}`,
       });
 
     expect(response.status).toBe(400);
